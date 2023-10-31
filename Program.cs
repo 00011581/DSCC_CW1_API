@@ -21,6 +21,7 @@ builder.Services.AddAutoMapper(typeof(GenericMapperProfile));
 
 // Repositories
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
+builder.Services.AddScoped<ITopicRepository, TopicRepository>();
 
 var app = builder.Build();
 
