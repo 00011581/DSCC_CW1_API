@@ -1,5 +1,6 @@
 using API.Data;
 using API.Infrastructure;
+using API.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,9 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conn
 
 // Mapping
 builder.Services.AddAutoMapper(typeof(GenericMapperProfile));
+
+// Repositories
+builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 
 var app = builder.Build();
 
