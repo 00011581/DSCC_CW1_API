@@ -9,7 +9,6 @@ namespace API.Models.DTOs
         public int Id { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
-        public DateTime CreatedAt { get; set; }
         public int TopicId { get; set; }
         public TopicDTO Topic { get; set; }
     }

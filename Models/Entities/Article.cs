@@ -15,9 +15,6 @@ namespace API.Models.Entities
         [Required]
         public string Body { get; set;}
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]   // default value DateTime.Now
-        public DateTime CreatedAt { get; set; } 
-
         [Required]
         [ForeignKey("Topic")]
         public int TopicId { get; set; }

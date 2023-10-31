@@ -15,8 +15,5 @@ namespace API.Models.Entities
         
         [StringLength(255)]
         public string? Description { get; set; }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]   // default value DateTime.Now
-        public DateTime CreatedAt { get; set; }
     }
 }
