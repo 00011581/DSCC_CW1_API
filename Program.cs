@@ -1,4 +1,5 @@
 using API.Data;
+using API.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,9 @@ builder.Services.AddSwaggerGen();
 // DbContext
 var connectionString = builder.Configuration.GetConnectionString("LocalDb");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
+
+// Mapping
+builder.Services.AddAutoMapper(typeof(GenericMapperProfile));
 
 var app = builder.Build();
 
