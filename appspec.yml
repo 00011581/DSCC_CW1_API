@@ -1,22 +1,22 @@
 ﻿version: 0.0
 os: linux
 files:
-    # copy app to /var/www directory of remote server
-    - source: app
-      destination: /var/www
-    # copy DeployScripts/webapi.service file to /etc/systemd/system directory of remote server
-    - source: DeployScripts/webapi.service
-      destination: /etc/systemd/system
+  # copy app to /var/www directory of remote server
+  - source: app
+    destination: /var/www
+  # copy DeployScripts/webapi.service file to /etc/systemd/system directory of remote server
+  - source: DeployScripts/webapi.service
+    destination: /etc/systemd/system
 hooks:
-    BeforeInstall:  # run command in BeforeInstall.sh file
-      - location: DeployScripts/BeforeInstall.sh
-        timeout: 120
-        runas: root
-    ApplicationStop:  # run command in StopApp.sh file
-      - location: DeployScripts/StopApp.sh
-        timeout: 120
-        runas: root
-    ApplicationStart:  # run command in StartApp.sh file
-      - location: DeployScripts/StartApp.sh
-        timeout: 120
-        runas: root
+  BeforeInstall:  # run command in BeforeInstall.sh file
+    - location: DeployScripts/BeforeInstall.sh
+      timeout: 120
+      runas: root
+  ApplicationStop:  # run command in StopApp.sh file
+    - location: DeployScripts/StopApp.sh
+      timeout: 120
+      runas: root
+  ApplicationStart:  # run command in StartApp.sh file
+    - location: DeployScripts/StartApp.sh
+      timeout: 120
+      runas: root
