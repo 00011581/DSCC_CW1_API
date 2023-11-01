@@ -13,7 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // DbContext
-var connectionString = builder.Configuration.GetConnectionString("LocalDb");
+var connectionString = builder.Configuration.GetConnectionString("ProductionDb");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
 
 // Mapping
