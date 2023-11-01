@@ -1,0 +1,14 @@
+﻿# Declaring and Configuring webapi.service so that I can use systemctl to run the app
+
+[Unit]
+Description=.NET Core CW1 Web API
+After=network.target
+
+[Service]
+WorkingDirectory=/var/www/
+ExecStart=/usr/bin/dotnet /var/www/API.dll
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
