@@ -2,6 +2,7 @@ using API.Data;
 using API.Infrastructure;
 using API.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,18 @@ builder.Services.AddAutoMapper(typeof(GenericMapperProfile));
 // Repositories
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 builder.Services.AddScoped<ITopicRepository, TopicRepository>();
+
+// Swagger Configuration
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc(
+        "v1",
+        new OpenApiInfo { Title = "CW API - v1", Version = "v1"}
+    );
+    var filePath = Path.Combine(System.AppContext.BaseDirectory, "API.xml");
+    c.IncludeXmlComments( filePath );
+});
+
 
 var app = builder.Build();
 
