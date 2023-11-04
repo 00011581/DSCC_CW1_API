@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API</name>
+    </assembly>
+    <members>
+        <member name="M:API.Controllers.ArticlesController.Get">
+            <summary>
+            Returns a list of all existing articles
+            </summary>
+            <response code="200">Success</response>
+            <returns>List of articles</returns>
+        </member>
+        <member name="M:API.Controllers.ArticlesController.Get(System.Int32)">
+            <summary>
+            Returns a specific article by Id
+            </summary>
+            <response code="200">Success</response>
+            <response code="404">Article not found</response>
+            <returns>List a single article</returns>
+        </member>
+        <member name="M:API.Controllers.ArticlesController.Post(API.Models.DTOs.ArticleCreateDTO)">
+            <summary>
+            Creates an article
+            </summary>
+            <response code="201">Article created successfully</response>
+            <response code="400">Not existing TopicId</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:API.Controllers.ArticlesController.Put(System.Int32,API.Models.DTOs.ArticleCreateDTO)">
+            <summary>
+            Updates an article by Id
+            </summary>
+            <response code="200">Article updated successfully</response>
+            <response code="400">Not existing TopicId</response>
+            <response code="404">Article not found</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:API.Controllers.ArticlesController.Delete(System.Int32)">
+            <summary>
+            Deletes an article by Id
+            </summary>
+            <response code="204">Article deleted successfully</response>
+            <response code="404">Article not found</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="T:API.Migrations.AddedTopicArticletables">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.AddedTopicArticletables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.AddedTopicArticletables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.AddedTopicArticletables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Migrations.Removedcolumnfromtables">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.Removedcolumnfromtables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.Removedcolumnfromtables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.Removedcolumnfromtables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
